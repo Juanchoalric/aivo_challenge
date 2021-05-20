@@ -1,8 +1,6 @@
 version: "3.8"
 services:
   web:
-    volumes:
-      - .:/code/app
-    image: myimage:latest
+    build: .
     ports:
-      - "5020:5000"
+      - "5000:5000"
