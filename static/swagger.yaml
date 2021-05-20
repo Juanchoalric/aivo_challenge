@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  description: "API for requesting countries over an specific satisfaction index"
+  version: "1.0.0"
+  title: "Satisfaction index country filter"
+  contact:
+    email: "juancruzalriccortabarria@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+
+paths:
+  /filter-country:
+    get:
+      tags:
+        - "country-filter"
+      summary: "Using the life satisfaction index to filter the country dataset"
+      description: "Returns all countries matching the condition"
+      parameters:
+        - name: "life_satisfaction_index"
+          in: "query"
+          description: "life satisfaction index for filtering countries"
+          required: true
+          schema:
+            type: number
+      responses:
+        "200":
+          description: "200 OK"
