@@ -26,5 +26,5 @@ class TestCountryFilter(unittest.TestCase):
     def test_country_filter_should_be_named_life_satisfaction_index(self):
 
         tested_app = app.test_client(self)
-        response = tested_app.get("/country/filter?life_satisfaction_index=hey").get_json()[1]
+        response = tested_app.get("/country/filter?hey=1000000").get_json()[1]
         self.assertEqual(response, 400)
