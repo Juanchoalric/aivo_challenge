@@ -12,25 +12,25 @@ swagger_ui_blueprint = get_swaggerui_blueprint(
     SWAGGER_ROUTE,
     API_ROUTE_FILE,
     config={
-        'app_name': "filter_country"
+        'app_name': "country"
     }
 )
 
 app.register_blueprint(swagger_ui_blueprint, url_prefix=SWAGGER_ROUTE)
 
 
-@app.route('/')
-def index():
-    return 'Go to /country-filter or /api/docs for a better experience'
-
-
-@app.route('/filter-country')
+@app.route('/country/filter')
 def country():
     life_satisfaction_param = request.args.to_dict()
     life_satisfaction_index_response = CountryFilterController.country_filter(
         life_satisfaction_param
     )
     return life_satisfaction_index_response
+
+
+@app.route('/')
+def index():
+    return 'Go to /country/filter or /api/docs for a better experience'
 
 
 if __name__ == '__main__':
