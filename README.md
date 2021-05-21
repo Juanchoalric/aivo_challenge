@@ -111,9 +111,9 @@ Really cool interface for calling the endpoints in an easy and fast way
 
 ### TODO'S
 
-. Get rid of the validation in the controller class and declare it in the schema.
-. Get the list of countries in the /country endpoint.
-. Refactor the app.py to only have the running instance, the controller should be the one calling the endpoints.
+* Get rid of the validation in the controller class and declare it in the schema.
+* Get the list of countries in the /country endpoint.
+* Refactor the app.py to only have the running instance, the controller should be the one calling the endpoints.
 
 
 
